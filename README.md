@@ -11,11 +11,11 @@ This backend is built with **Spring Boot (Java)** using **MySQL** for data persi
 
 1. **VIEWER role** – Can only **read financial records** and **dashboard summaries**, ideal for managers and auditors who need visibility without modification rights.
 
-2. **ANALYST role** – Can **create, read, update, and delete** financial records that belong to their own scope, enabling detailed analysis and iterative data refinement.
+2. **ANALYST role** – Can **create, read and update** financial records that belong to their own scope, enabling detailed analysis and iterative data refinement.
 
 3. **ADMIN role** – Has **full access** to all features, including managing users, assigning roles, and performing CRUD operations on all records.
 
-Key design and security choices:
+### 🔐 Key Design and Security Choices
 
 4. **User registration** – New users sign up via `POST /api/auth/register` with server‑side validation.
 
@@ -27,7 +27,7 @@ Key design and security choices:
 
 8. **Forbidden access** – Insufficient role permissions result in HTTP `403 Forbidden`, with clear error messages.
 
-Core financial records module:
+### 📊 Core Financial Records Module
 
 9. **CRUD operations** – Full **Create, Read, Update, Delete** on records via `/api/records`, supporting flexible financial workflows.
 
