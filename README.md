@@ -73,7 +73,8 @@ CREATE DATABASE zorvyn_finance;
 Edit `src/main/resources/application.properties` with your MySQL details:
 
 ```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/zorvyn_finance
+
+spring.datasource.url=jdbc:mysql://localhost:3306/zorvyn_finance?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
 spring.datasource.username=root
 spring.datasource.password=your_password
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
