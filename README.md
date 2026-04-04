@@ -46,9 +46,8 @@ Core financial records module:
 - **Backend framework**: Spring Boot (Java)  
 - **Auth**: JWT with **role‑based access control (VIEWER, ANALYST, ADMIN)**  
 - **Database**: MySQL only  
-- **API docs**: Swagger UI (OpenAPI)  
-- **Deployment ready**: Designed for platforms like **Render, Railway, Fly.io**, etc. (Dockerfile and configs can be added later).
-
+- **API docs**: Swagger UI (OpenAPI)
+- 
 ---
 
 ## 🏁 How to Run Locally
