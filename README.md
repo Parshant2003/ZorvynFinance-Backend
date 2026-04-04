@@ -1,58 +1,62 @@
-## 🚀 About the Project & Permissions
-
-
 # Zorvyn Finance Backend
 
----
-This backend is built with **Spring Boot (Java)** using **MySQL** for data persistence and **JWT-based authentication** with **role-based access control (RBAC)**. There are three main roles in the system:
-
-1. **VIEWER**: Can only read financial records and dashboard summaries.
-2. **ANALYST**: Can create, read, update, and delete financial records that belong to their own scope.
-3. **ADMIN**: Has full access to all features, including CRUD operations on all records and users.
-
-Key design choices and features:
-
-4. **Registration**: Users sign up via `POST /api/auth/register`.
-5. **Login**: Users receive a JWT token via `POST /api/auth/login`.
-6. **Token usage**: All secured endpoints require `Authorization: Bearer <token>`.
-7. **Unauthorized access**: Invalid/expired tokens return HTTP 401 (Unauthorized).
-8. **Forbidden access**: Insufficient role permissions return HTTP 403 (Forbidden).
-
-Financial records module:
-
-9. **CRUD operations**: Full Create, Read, Update, Delete on records via `/api/records`.
-10. **Filtering**: Records can be filtered by date range, category, and transaction type.
-11. **Dashboard APIs**: Provide income, expenses, totals, and trends in JSON format.
-12. **Input validation**: Spring Boot validation annotations ensure data quality at the API level.
-13. **Business validation**: Additional checks ensure only authorized users can modify or delete records.
-
-Swagger UI and documentation:
-
-14. API documentation is available at `http://localhost:8080/swagger-ui/index.html`.
-15. All endpoints, request/response models, and example payloads are visible and testable there.
-16. Local testing is easy for both frontend developers and backend integrations.
-
-Deployment and structure:
-
-17. Backend is designed to run locally using MySQL and embedded Tomcat.
-18. No Docker is used in this commit, but the project can be containerized later.
-19. Environment variables (database URL, JWT secret) can be configured for deployment on platforms like Render, Railway, or Fly.io.
-20. The project is ready for production deployment once the chosen cloud provider is configured.
+Spring Boot (Java) backend for the Zorvyn Finance assignment.  
+Supports **user roles, financial records CRUD, filtering, dashboard APIs, RBAC, and JWT authentication** on **MySQL only**.
 
 ---
 
-### 📝 Note
+## 🚀 About the Project & Permissions
 
+This backend is built with **Spring Boot (Java)** using **MySQL** for data persistence and **JWT-based authentication** with **role-based access control (RBAC)**. Roles are clearly separated for real-world finance use cases:
 
+1. **VIEWER role** – Can only **read financial records** and **dashboard summaries**, ideal for managers and auditors who need visibility without modification rights.
 
+2. **ANALYST role** – Can **create, read, update, and delete** financial records that belong to their own scope, enabling detailed analysis and iterative data refinement.
 
+3. **ADMIN role** – Has **full access** to all features, including managing users, assigning roles, and performing CRUD operations on all records.
+
+Key design and security choices:
+
+4. **User registration** – New users sign up via `POST /api/auth/register` with server‑side validation.
+
+5. **Secure login** – Authenticated users receive a **JWT token** via `POST /api/auth/login` for subsequent API calls.
+
+6. **Token‑based security** – All protected endpoints require `Authorization: Bearer <token>` in the header.
+
+7. **Unauthorized access** – Invalid or expired tokens result in HTTP `401 Unauthorized`.
+
+8. **Forbidden access** – Insufficient role permissions result in HTTP `403 Forbidden`, with clear error messages.
+
+Core financial records module:
+
+9. **CRUD operations** – Full **Create, Read, Update, Delete** on records via `/api/records`, supporting flexible financial workflows.
+
+10. **Smart filtering** – Records can be filtered by **date range, category, and transaction type**, enabling precise data analysis.
+
+11. **Dashboard APIs** – Deliver **income, expenses, totals, and trends** in clean JSON format for easy consumption by frontend dashboards.
+
+12. **Robust validation** – Input is validated using **Spring Boot annotations** (e.g., `@NotNull`, `@Email`) and additional business‑level checks to ensure data integrity.
+
+13. **Developer‑friendly docs** – API documentation is available at `http://localhost:8080/swagger-ui/index.html`, where all endpoints, models, and example payloads are visible and testable, making local testing simple for both frontend and backend developers.
+
+---
+
+## 🐱‍👤 Quick Project Summary
+
+- **Backend framework**: Spring Boot (Java)  
+- **Auth**: JWT with **role‑based access control (VIEWER, ANALYST, ADMIN)**  
+- **Database**: MySQL only  
+- **API docs**: Swagger UI (OpenAPI)  
+- **Deployment ready**: Designed for platforms like **Render, Railway, Fly.io**, etc. (Dockerfile and configs can be added later).
+
+---
 
 ## 🏁 How to Run Locally
 
 ### Prerequisites
-- Java 17 (or 11+)
-- Maven
-- MySQL installed locally
+- Java 17 (or 11+)  
+- Maven  
+- MySQL installed locally  
 
 ### Step 1: Clone the repo
 ```bash
@@ -80,8 +84,6 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 ```
 
----
-
 ### Step 4: Build and run
 ```bash
 ./mvnw clean package
@@ -106,19 +108,9 @@ http://localhost:8080/swagger-ui/index.html
 ```
 
 Here you can:
-- View all REST endpoints
-- Test APIs directly
-- See request/response models
-
----
-
-## 🚀 Quick Brief about this project
-
-- **Backend framework**: Spring Boot (Java)  
-- **Auth**: JWT with role‑based access control (VIEWER, ANALYST, ADMIN)  
-- **Database**: MySQL only  
-- **API docs**: Swagger UI (OpenAPI)  
-- **Deployment ready**: Designed for platforms like Render, Railway, Fly.io, etc. (Dockerfile and configs can be added later).
+- View all REST endpoints  
+- Test APIs directly  
+- See request/response models  
 
 ---
 
