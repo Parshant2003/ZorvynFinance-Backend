@@ -47,7 +47,6 @@ This backend is built with **Spring Boot (Java)** using **MySQL** for data persi
 - **Auth**: JWT with **role‑based access control (VIEWER, ANALYST, ADMIN)**  
 - **Database**: MySQL only  
 - **API docs**: Swagger UI (OpenAPI)
-- 
 ---
 
 ## 🏁 How to Run Locally
