@@ -113,6 +113,12 @@ Here you can:
 
 ---
 
+
+## 📄 API Documentation PDF
+
+**[📥 Download Swagger UI Docs](https://github.com/Parshant2003/ZorvynFinance-Backend/raw/main/Swagger%20UI.pdf)**  
+*(Complete API documentation with all endpoints, schemas, and examples)*
+
 ## 📝 Note
 
 This project is currently deployed **locally for demo purposes on MySQL**.  
